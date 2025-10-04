@@ -1,7 +1,10 @@
 <script lang="ts">
+	import Section from '$lib/components/ui/section.svelte';
 	import { current } from '$lib/stores/theme';
 </script>
 
-<p>
-	current: {$current}
-</p>
+<Section>
+	<p>
+		current: {$current}
+	</p>
+</Section>
