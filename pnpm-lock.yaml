@@ -7,6 +7,16 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@tabler/icons-svelte':
+        specifier: ^3.35.0
+        version: 3.35.0(svelte@5.39.8)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      tailwind-merge:
+        specifier: ^3.3.1
+        version: 3.3.1
     devDependencies:
       '@inlang/paraglide-js':
         specifier: ^2.3.2
@@ -32,6 +42,9 @@ importers:
       '@vitest/browser':
         specifier: ^3.2.4
         version: 3.2.4(playwright@1.55.1)(vite@7.1.9(jiti@2.6.1)(lightningcss@1.30.1))(vitest@3.2.4)
+      daisyui:
+        specifier: ^5.1.27
+        version: 5.1.27
       playwright:
         specifier: ^1.55.1
         version: 1.55.1
@@ -476,6 +489,14 @@ packages:
       svelte: ^5.0.0
       vite: ^6.3.0 || ^7.0.0
 
+  '@tabler/icons-svelte@3.35.0':
+    resolution: {integrity: sha512-Y4J3RuKv7Ogs3Wk3Gc+Lm249QGHeTI9wjAIqGzszxiEkOyhKwXP54VIVQW2M0LRwDi589EHnMkKH+cXQjCulHg==}
+    peerDependencies:
+      svelte: '>=3 <6 || >=5.0.0-next.0'
+
+  '@tabler/icons@3.35.0':
+    resolution: {integrity: sha512-yYXe+gJ56xlZFiXwV9zVoe3FWCGuZ/D7/G4ZIlDtGxSx5CGQK110wrnT29gUj52kEZoxqF7oURTk97GQxELOFQ==}
+
   '@tailwindcss/node@4.1.14':
     resolution: {integrity: sha512-hpz+8vFk3Ic2xssIA3e01R6jkmsAhvkQdXlEbRTk6S10xDAtiQiM3FyvZVGsucefq764euO/b8WUW9ysLdThHw==}
 
@@ -724,6 +745,9 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+
+  daisyui@5.1.27:
+    resolution: {integrity: sha512-oCC2RwjrGRPTeEpaXoNmYydzVfSRdyJCthFsi/Q5PErAvaoD8kDarxlW+wiPAx2WmM8W8lXvyAHJUqjObCMWOQ==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -1145,6 +1169,9 @@ packages:
   svelte@5.39.8:
     resolution: {integrity: sha512-KfZ3hCITdxIXTOvrea4nFZX2o+47HPTChKeocgj9BwJQYqWrviVCcPj4boXHF5yf8+eBKqhHY8xii//XaakKXA==}
     engines: {node: '>=18'}
+
+  tailwind-merge@3.3.1:
+    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
 
   tailwindcss@4.1.14:
     resolution: {integrity: sha512-b7pCxjGO98LnxVkKjaZSDeNuljC4ueKUddjENJOADtubtdo8llTaJy7HwBMeLNSSo2N5QIAgklslK1+Ir8r6CA==}
@@ -1637,6 +1664,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@tabler/icons-svelte@3.35.0(svelte@5.39.8)':
+    dependencies:
+      '@tabler/icons': 3.35.0
+      svelte: 5.39.8
+
+  '@tabler/icons@3.35.0': {}
+
   '@tailwindcss/node@4.1.14':
     dependencies:
       '@jridgewell/remapping': 2.3.5
@@ -1858,6 +1892,8 @@ snapshots:
   core-util-is@1.0.3: {}
 
   cssesc@3.0.0: {}
+
+  daisyui@5.1.27: {}
 
   debug@4.4.3:
     dependencies:
@@ -2191,6 +2227,8 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.19
       zimmerframe: 1.1.4
+
+  tailwind-merge@3.3.1: {}
 
   tailwindcss@4.1.14: {}
 

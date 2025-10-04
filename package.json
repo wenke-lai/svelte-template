@@ -26,6 +26,7 @@
 		"@tailwindcss/typography": "^0.5.18",
 		"@tailwindcss/vite": "^4.1.13",
 		"@vitest/browser": "^3.2.4",
+		"daisyui": "^5.1.27",
 		"playwright": "^1.55.1",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
@@ -42,5 +43,10 @@
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
+	},
+	"dependencies": {
+		"@tabler/icons-svelte": "^3.35.0",
+		"clsx": "^2.1.1",
+		"tailwind-merge": "^3.3.1"
 	}
 }
