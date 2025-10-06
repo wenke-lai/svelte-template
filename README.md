@@ -1,38 +1,45 @@
-# sv
+# Svelte Template
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Quick Start
 
-## Creating a project
+fork this project to development.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Themes
 
-```sh
-# create a new project in the current directory
-npx sv create
+This project uses [DaisyUI](https://daisyui.com/) for theming. To change themes, update the following files:
 
-# create a new project in my-app
-npx sv create my-app
-```
+1. [src/lib/stores/theme.ts](src/lib/stores/theme.ts#L4) - Update `ThemeName` type:
 
-## Developing
+   ```typescript
+   export type ThemeName = 'cupcake' | 'dark';
+   ```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+2. [src/routes/+layout.svelte](src/routes/+layout.svelte#L20) - Update theme configuration:
 
-```sh
-npm run dev
+   ```typescript
+   const theme: Theme = { light: 'cupcake', dark: 'dark' };
+   ```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+3. [src/routes/+layout.svelte](src/routes/+layout.svelte#L53) - Update default theme:
 
-## Building
+   ```typescript
+   document.documentElement.setAttribute('data-theme', 'cupcake');
+   ```
 
-To create a production version of your app:
+4. [src/app.css](src/app.css#L6) - Add themes to daisyui plugin:
 
-```sh
-npm run build
-```
+   ```css
+   daisyui: {
+       themes: [
+           cupcake --default,
+           dark,
+       ],
+   },
+   ```
 
-You can preview the production build with `npm run preview`.
+5. [src/app.css](src/app.css#L11) - Update dark mode variant:
+   ```css
+   @custom-variant dark (&:where([data-theme=dark], [data-theme=cupcake] *));
+   ```
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+See [DaisyUI themes documentation](https://daisyui.com/docs/themes/) for more details.
