@@ -2,6 +2,7 @@ import HeaderActions from './header-actions.svelte';
 import HeaderBrand from './header-brand.svelte';
 import HeaderHamburger from './header-hamburger.svelte';
 import HeaderNavbar from './header-navbar.svelte';
+import HeaderSignIn from './header-signin.svelte';
 import Header from './header.svelte';
 
-export { Header, HeaderActions, HeaderBrand, HeaderHamburger, HeaderNavbar };
+export { Header, HeaderActions, HeaderBrand, HeaderHamburger, HeaderNavbar, HeaderSignIn };

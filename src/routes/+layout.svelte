@@ -7,11 +7,13 @@
 		HeaderActions,
 		HeaderBrand,
 		HeaderHamburger,
-		HeaderNavbar
+		HeaderNavbar,
+		HeaderSignIn
 	} from '$lib/components/ui/header';
 	import Main from '$lib/components/ui/main.svelte';
 	import { current, type Theme } from '$lib/stores/theme';
 	import { onMount, setContext } from 'svelte';
+	import { ClerkProvider } from 'svelte-clerk';
 
 	import '../app.css';
 
@@ -61,29 +63,35 @@
 	</script>
 </svelte:head>
 
-<Header classes={{ header: 'bg-base-200' }}>
-	<HeaderBrand title={site.title}>
-		{#snippet hamburger()}
-			<HeaderHamburger classes={{ drawer: 'block lg:hidden', svg: 'size-6' }} links={[]} />
-		{/snippet}
-	</HeaderBrand>
-	<HeaderNavbar classes={{ nav: 'hidden lg:block' }} links={[]} />
-	<HeaderActions>
-		<ThemeController classes={{ svg: 'size-6' }} />
-	</HeaderActions>
-</Header>
+<ClerkProvider>
+	<Header classes={{ header: 'bg-base-200' }}>
+		<HeaderBrand title={site.title}>
+			{#snippet hamburger()}
+				<HeaderHamburger classes={{ drawer: 'block lg:hidden', svg: 'size-6' }} links={[]} />
+			{/snippet}
+		</HeaderBrand>
+		<HeaderNavbar
+			classes={{ nav: 'hidden lg:block' }}
+			links={[{ href: '/private', label: '受保護的頁面' }]}
+		/>
+		<HeaderActions>
+			<ThemeController classes={{ svg: 'size-6' }} />
+			<HeaderSignIn />
+		</HeaderActions>
+	</Header>
 
-<Main classes={{ main: 'lg:mb-12' }}>
-	{@render children?.()}
-</Main>
+	<Main classes={{ main: 'lg:mb-12' }}>
+		{@render children?.()}
+	</Main>
 
-<Footer>
-	<FooterDesktop
-		classes={{ container: 'hidden lg:block' }}
-		title={site.title}
-		description={site.description}
-		copyright={{ year: 2025, title: site.title }}
-		navLinks={site.navLinks}
-	/>
-	<FooterDock classes={{ dock: 'fixed lg:hidden', placeholder: 'block lg:hidden' }} />
-</Footer>
+	<Footer>
+		<FooterDesktop
+			classes={{ container: 'hidden lg:block' }}
+			title={site.title}
+			description={site.description}
+			copyright={{ year: 2025, title: site.title }}
+			navLinks={site.navLinks}
+		/>
+		<FooterDock classes={{ dock: 'fixed lg:hidden', placeholder: 'block lg:hidden' }} />
+	</Footer>
+</ClerkProvider>
